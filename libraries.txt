@@ -1,0 +1,9 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+# Automatically added based on includes:
+
+Keypad
+Firebase Arduino Client Library for ESP8266 and ESP32
+Ultrasonic
+ESP32Servo

@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "author": "Basem Ali",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -9.6, "left": -119.96, "attrs": {} },
+      { "type": "wokwi-servo", "id": "servo1", "top": -126.8, "left": 9.6, "attrs": {} },
+      {
+        "type": "wokwi-hc-sr04",
+        "id": "ultrasonic1",
+        "top": 20.7,
+        "left": -407.3,
+        "attrs": { "distance": "99" }
+      },
+      { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -434, "left": -205.6, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "esp:5V", "servo1:V+", "red", [ "h-38.25", "v-249.6" ] ],
+      [ "servo1:GND", "esp:GND.2", "black", [ "h0" ] ],
+      [ "servo1:PWM", "esp:23", "green", [ "h9.6", "v86.6" ] ],
+      [ "ultrasonic1:GND", "esp:GND.1", "black", [ "v0" ] ],
+      [ "esp:25", "ultrasonic1:TRIG", "green", [ "v0", "h-95.85", "v67.2", "h-86.4" ] ],
+      [ "esp:26", "ultrasonic1:ECHO", "green", [ "h-76.65", "v28.8", "h-96" ] ],
+      [ "ultrasonic1:VCC", "esp:5V", "red", [ "v0" ] ],
+      [ "esp:13", "keypad1:R1", "green", [ "h0" ] ],
+      [ "esp:12", "keypad1:R2", "green", [ "v0", "h28.95" ] ],
+      [ "esp:14", "keypad1:R3", "green", [ "h0" ] ],
+      [ "esp:27", "keypad1:R4", "green", [ "h0" ] ],
+      [ "esp:5", "keypad1:C1", "green", [ "h0" ] ],
+      [ "esp:18", "keypad1:C2", "green", [ "h0" ] ],
+      [ "esp:19", "keypad1:C3", "green", [ "h0" ] ],
+      [ "esp:21", "keypad1:C4", "green", [ "h0" ] ]
+    ],
+    "dependencies": {}
+  }
